@@ -23,6 +23,7 @@ router.post('/', (req, res) => {
       } else if (results.length > 0) {
         // Login successful, create a session
         req.session.username = username;
+        req.session.loggedIn = true;
         res.sendStatus(200);
       } else {
         // Login failed, return an error response
